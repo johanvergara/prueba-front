@@ -1,0 +1,38 @@
+<div mat-dialog-content>{{message}}</div>
+<div>
+    <form [formGroup]="registrationForm">
+
+        <mat-form-field>
+            <mat-label>Tipo de Identificacion</mat-label>
+            <mat-select formControlName="tipo_identificacion">
+              <mat-option value=1>Cedula ciudadania</mat-option>
+              <mat-option value=2>NIT</mat-option>
+              <mat-option value=3>Cedula extranjeria</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Numero de Identificacion</mat-label>
+            <input formControlName="numero_identificacion" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="nombre" matInput>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Genero</mat-label>
+            <mat-select formControlName="genero">
+              <mat-option value=1>Femenino</mat-option>
+              <mat-option value=2>Masculino</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div mat-dialog-actions>
+            <button mat-button (click)="submit()">Guardar</button>
+            <button mat-button [mat-dialog-close]="true">Cancelar</button>
+        </div>
+
+    </form>
+</div>
